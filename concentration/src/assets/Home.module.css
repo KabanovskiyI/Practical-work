@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.home-page {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  font-family: "Press Start 2P", system-ui;
+  background: #000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Фоны */
+.home-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(45% 55% at 50% 45%, #6f1f02 0%, #230000 60%, #000 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.home-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero__container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  text-align: center;
+}
+
+/* ТАЙМЕР */
+.hero__timer {
+  color: #fff;
+  font-size: 32px;
+  text-shadow: 0 0 10px rgba(255, 150, 50, 0.8), 0 0 20px rgba(255, 120, 30, 0.6);
+  display: flex;
+  align-items: center;
+  cursor: text;
+  user-select: none;
+}
+
+.timer__segment {
+  display: inline-block;
+  min-width: 1.2em;
+  text-align: center;
+  padding-bottom: 4px;
+  transition: border-color 0.1s;
+}
+
+/* СКРЫТЫЙ ИНПУТ */
+.hidden_input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ПОЛЕ ВВОДА ЗАДАЧИ */
+.hero__input {
+  width: 340px;
+  padding: 16px 18px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 14px;
+  color: #fff;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 10px; /* Уменьшил, так как шрифт широкий */
+  text-align: center;
+  border: 1px solid rgba(255, 140, 0, 0.35);
+  outline: none;
+  box-shadow: inset 0 0 10px rgba(255, 120, 30, 0.15), 0 0 12px rgba(255, 120, 30, 0.25);
+}
+
+.hero__input::placeholder {
+  color: rgba(255, 180, 120, 0.55);
+  font-size: 8px;
+}
+
+/* КНОПКА СТАРТА */
+.start__button {
+  width: 340px;
+  padding: 16px 0;
+  border-radius: 18px;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 14px;
+  color: #fff;
+  background: linear-gradient(180deg, #ff8a2a 0%, #ff3d00 100%);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 20px rgba(255, 120, 30, 0.6), inset 0 0 10px rgba(255, 200, 120, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.start__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(255, 140, 40, 0.9), inset 0 0 12px rgba(255, 220, 150, 0.35);
+}
+
+.start__button:active {
+  transform: translateY(0);
+  box-shadow: 0 0 15px rgba(255, 120, 30, 0.6);
+}
